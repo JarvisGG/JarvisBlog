@@ -93,22 +93,22 @@
 
 
 
-<meta name="description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。 计算时间：这里的measure，">
+<meta name="description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。">
 <meta name="keywords" content="Android 源码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 丢帧原理以及办法">
 <meta property="og:url" content="http://yoursite.com/2017/01/22/Android 丢帧原理以及办法/index.html">
 <meta property="og:site_name" content="JarvisBlog">
-<meta property="og:description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。 计算时间：这里的measure，">
+<meta property="og:description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-cade3554a7db68ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-eb07b0f9a442d6f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-4c8e729db92f694a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-0dbcc3353bd36d2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-5ddc05554c24d6d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-03T11:35:46.000Z">
+<meta property="og:updated_time" content="2017-07-03T12:21:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 丢帧原理以及办法">
-<meta name="twitter:description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。 计算时间：这里的measure，">
+<meta name="twitter:description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2710533-cade3554a7db68ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -348,6 +348,7 @@
       
         <h2 id="接近年底，想分享点儿东西给大家。"><a href="#接近年底，想分享点儿东西给大家。" class="headerlink" title="接近年底，想分享点儿东西给大家。"></a>接近年底，想分享点儿东西给大家。</h2><h2 id="Android-UI绘制过程"><a href="#Android-UI绘制过程" class="headerlink" title="Android UI绘制过程"></a>Android UI绘制过程</h2><p>开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。</p>
 <p>先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。</p>
+<a id="more"></a>
 <p>计算时间：这里的measure，layout的过程，都是会向下递归计算的，学过数据结构的话，应该知道，深搜的代价是很大的。所以尽量让树的高度降低，这里就引出扁平化布局。</p>
 <p>绘图时间：这里需要着重讲一下，因为有时候这才是我们UI卡顿的主要原因。在这里我们要把android的试图看成是三维的，就像photoshop的图层一样。android在绘制的时候就会一层一层的“粉刷”，好了，那么造成卡顿，也就是丢帧，说白了最后没有在16ms内做完。好了，让我们剖析一下：</p>
 <h3 id="invalidate-："><a href="#invalidate-：" class="headerlink" title="invalidate()："></a>invalidate()：</h3><p>我们知道invalidate 是用来请求View 重绘的</p>
@@ -648,7 +649,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>

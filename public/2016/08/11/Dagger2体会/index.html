@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="JarvisBlog">
 <meta property="og:description" content="前言最近刚来我司，开始入手公司的项目，MVP，RxJava，Dagger2搭建的框架。对于我这个刚没多长时间的Android菜鸟，着实花了一段时间，说点儿题外话，最近研究了Java8，已经开始由命令式编程过度到函数式编程了，尤其是加了Lambda表达式，配起来RxJava的切换线程，异步操作爽呆了。 至于MVP，开始我是只知道MVC，但在看我司的项目架构的时候发现有差别，后来在简书上看到一个博主，">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1504173-0b81f8a57768a703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-03T10:46:07.000Z">
+<meta property="og:updated_time" content="2017-07-03T12:20:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dagger2体会">
 <meta name="twitter:description" content="前言最近刚来我司，开始入手公司的项目，MVP，RxJava，Dagger2搭建的框架。对于我这个刚没多长时间的Android菜鸟，着实花了一段时间，说点儿题外话，最近研究了Java8，已经开始由命令式编程过度到函数式编程了，尤其是加了Lambda表达式，配起来RxJava的切换线程，异步操作爽呆了。 至于MVP，开始我是只知道MVC，但在看我司的项目架构的时候发现有差别，后来在简书上看到一个博主，">
@@ -344,7 +344,7 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近刚来我司，开始入手公司的项目，MVP，RxJava，Dagger2搭建的框架。对于我这个刚没多长时间的Android菜鸟，着实花了一段时间，说点儿题外话，最近研究了Java8，已经开始由命令式编程过度到函数式编程了，尤其是加了Lambda表达式，配起来RxJava的切换线程，异步操作爽呆了。</p>
 <p>至于MVP，开始我是只知道MVC，但在看我司的项目架构的时候发现有差别，后来在简书上看到一个博主，醍醐灌顶，明白了MVP其实跟MVC是不一样的，就单单Model来说，在MVC中只是我们的一些javaBean，而在MVP它涉及到数据的来龙去脉，数据是来自内存，硬盘，还是网络。已经数据将会怎样存储都包含其中，至于MV的不同，请大家看<a href="https://hexo.io/" target="_blank" rel="external">MVP</a>。</p>
-<p>接下来就是这篇博客的重点了，Dagger2，相信大家都或多或少用过或者听说过。让大家津津乐道的就是它的依赖注入，之前有瞭解过依赖注入，知道他最大的好处是解藕，大学时候没好好研究，今天我想说一下我的心得。</p>
+<p>接下来就是这篇博客的重点了，Dagger2，相信大家都或多或少用过或者听说过。让大家津津乐道的就是它的依赖注入，之前有瞭解过依赖注入，知道他最大的好处是解藕，大学时候没好好研究，今天我想说一下我的心得。<br><a id="more"></a></p>
 <h2 id="几个疑问"><a href="#几个疑问" class="headerlink" title="几个疑问"></a>几个疑问</h2><h3 id="什么是解耦？"><a href="#什么是解耦？" class="headerlink" title="什么是解耦？"></a>什么是解耦？</h3><p>解耦就是松耦合，在我们开始学Java的时候new过各种事物，(PS世间万物皆对象)，但当工程变大，你的java文件过多，一旦需求妹妹过来跟你娇滴滴的说，构造函数加个参数呗，毕竟是妹子求，怎能不从，然后你开始昏天黑地的找，这种最直观的牵一发而动全身的体验就是耦合，很直观吧。官方的说法就是，在A中new B违反了单一职责原则，B 只能在A中new，违反了开闭原则。我们需要做的就是弱化这种关系。</p>
 <h3 id="什么是依赖注入？"><a href="#什么是依赖注入？" class="headerlink" title="什么是依赖注入？"></a>什么是依赖注入？</h3><p>那么依赖注入这个思想是什么那，假设A需要B，我们要做的不是硬编码new B，而是通过一个工厂去生产它，你看到这一定蒙蔽了，工厂不也得new吗，讲道理，是这样，但你想，当你想改B的有参构造或是其他，你只需要改他的工厂。设计模式就是这样，你可能会感觉，好麻烦啊，我开始也是这样，觉得明明几行，为什么用了设计模式会这么多代码。担当开始接收项目，你会感觉自己的代码越写越难以维护，藕合度越高，最直观的感受，写的自己都心力交瘁，牵一发动全身，好了，回归正题，设想假如你在100个类里面new 了B，当B改变的时候你是不是要去一个个改，但是假如你只是修改他的工厂那就不用了，因为B 的源头是你在用到它的时候由工厂注入，无论是初始化加载，还是lazy加载，都一样。</p>
 <p>其实依赖注入我们一定见过，这里聚一下例子：</p>
@@ -614,7 +614,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2016 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
