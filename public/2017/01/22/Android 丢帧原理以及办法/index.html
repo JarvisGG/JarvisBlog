@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-4c8e729db92f694a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-0dbcc3353bd36d2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2710533-5ddc05554c24d6d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-07-03T12:21:03.000Z">
+<meta property="og:updated_time" content="2017-07-04T01:54:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 丢帧原理以及办法">
 <meta name="twitter:description" content="接近年底，想分享点儿东西给大家。Android UI绘制过程开发中的卡顿我想没跟人都遇到过，之前也是搜博客看看怎么个解决办法，没有认真研究过，今天我打算跟大家聊一聊。 先从View 说吧。相信大家应该都知道View的绘制过程，measure，layout，draw。丢帧一定是在16ms内没有把这些事儿干完就对了，这里我们简单的分一下，主要是计算时间，以及绘图时间。">
@@ -321,7 +321,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/01/22/Android 丢帧原理以及办法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/22/Android 丢帧原理以及办法/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/01/22/Android 丢帧原理以及办法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -453,6 +454,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/04/22/GreenDao 数据库升级数据迁移/" rel="prev" title="GreenDao 数据库升级数据迁移">
+                GreenDao 数据库升级数据迁移 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -477,8 +482,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/22/Android 丢帧原理以及办法/"
-           data-title="Android 丢帧原理以及办法" data-url="http://yoursite.com/2017/01/22/Android 丢帧原理以及办法/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -527,7 +535,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -540,7 +548,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -760,28 +768,44 @@
 
   
 
+
   
+
     
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jarvisgg"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
+      <script id="dsq-count-scr" src="https://https-jarvisgg-github-io.disqus.com/count.js" async></script>
     
+
     
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/01/22/Android 丢帧原理以及办法/';
+          this.page.identifier = '2017/01/22/Android 丢帧原理以及办法/';
+          this.page.title = 'Android 丢帧原理以及办法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-jarvisgg-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
   
 
 
@@ -791,14 +815,6 @@
 
 
 
-
-
-
-
-
-
-
-
   
 
 
@@ -817,5 +833,9 @@
 
   
 
+  <% if (theme.canvas_nest) { %>
+    <script type="text/javascript"
+    color="0,0,0" opacity='0.4' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  <% } %>
 </body>
 </html>

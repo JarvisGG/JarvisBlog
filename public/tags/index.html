@@ -268,10 +268,10 @@
     
       <div class="tag-cloud">
         <div class="tag-cloud-title">
-            目前共计 2 个标签
+            目前共计 4 个标签
         </div>
         <div class="tag-cloud-tags">
-          <a href="/tags/Android-源码/" style="font-size: 12px; color: #ccc">Android 源码</a> <a href="/tags/Android-第三方/" style="font-size: 12px; color: #ccc">Android 第三方</a>
+          <a href="/tags/Android-View/" style="font-size: 12px; color: #ccc">Android View</a> <a href="/tags/Android-源码/" style="font-size: 30px; color: #111">Android 源码</a> <a href="/tags/Android-第三方/" style="font-size: 30px; color: #111">Android 第三方</a> <a href="/tags/RxBus/" style="font-size: 12px; color: #ccc">RxBus</a>
         </div>
       </div>
     
@@ -285,8 +285,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="tags/index.html"
-           data-title="tags" data-url="http://yoursite.com/tags/index.html">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -326,7 +329,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -339,7 +342,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -543,28 +546,44 @@
 
   
 
+
   
+
     
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jarvisgg"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
+      <script id="dsq-count-scr" src="https://https-jarvisgg-github-io.disqus.com/count.js" async></script>
     
+
     
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/tags/index.html';
+          this.page.identifier = 'tags/index.html';
+          this.page.title = 'tags';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-jarvisgg-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
   
 
 
@@ -574,14 +593,6 @@
 
 
 
-
-
-
-
-
-
-
-
   
 
 
@@ -600,5 +611,9 @@
 
   
 
+  <% if (theme.canvas_nest) { %>
+    <script type="text/javascript"
+    color="0,0,0" opacity='0.4' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  <% } %>
 </body>
 </html>
