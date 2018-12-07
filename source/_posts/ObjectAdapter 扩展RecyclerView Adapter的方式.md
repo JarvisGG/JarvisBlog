@@ -213,3 +213,15 @@ objectAdapter.move(1,2);
 1.我们这里通过 PresenterSelector 来总结当前所有的卡片种类（Presenter).</br>
 2.将我们不同的卡片业务逻辑划分到对应的 Presenter.</br>
 3.关于基本操作全部封装在 ObjectAdapter.</br>
+
+### How to use?
+``` gradle
+repositories {
+    // ...
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile 'com.jarvis.library:ObjectAdapter:1.0'
+}
+```
