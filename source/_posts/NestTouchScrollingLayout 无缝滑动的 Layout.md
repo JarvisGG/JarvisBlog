@@ -202,6 +202,11 @@ protected boolean canScrollDown(View view, float x, float y, boolean lockRect) {
 |normal|webview|
 |![demo3](https://github.com/JarvisGG/NestedTouchScrollingLayout/blob/master/captures/demo3.gif?raw=true)|![demo4](https://github.com/JarvisGG/NestedTouchScrollingLayout/blob/master/captures/demo4.gif?raw=true)|
 |bottomsheet normal|bottomsheet appbarlayout|
+|![demo8](https://github.com/JarvisGG/NestedTouchScrollingLayout/blob/master/captures/demo8.gif?raw=true)|![demo9](https://github.com/JarvisGG/NestedTouchScrollingLayout/blob/master/captures/demo9.gif?raw=true)|
+|view recyclerview|webview recyclerview|
+|![demo5](https://github.com/JarvisGG/NestedTouchScrollingLayout/blob/master/captures/demo5.gif?raw=true)|![demo6](https://github.com/JarvisGG/NestedTouchScrollingLayout/blob/master/captures/demo6.gif?raw=true)|
+|vip|question|
+
 
 ### Usage example
 
