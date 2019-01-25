@@ -239,7 +239,7 @@ mNestedTouchScrollingLayout.registerNestScrollChildCallback(new NestedTouchScrol
         
         // 当前 Layout 偏移距离
 	@Override
-	public void onNestChildScrollChange(float deltaY) {
+	public void onNestChildScrollChange(float deltaY, float velocityY) {
 
 	}
 	
@@ -345,7 +345,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.JarvisGG:NestedTouchScrollingLayout:v1.2.0'
+    implementation 'com.github.JarvisGG:NestedTouchScrollingLayout:1.2.3'
 }
 ```
 方式 2:
@@ -355,7 +355,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    implementation 'com.jarvis.library.NestedTouchScrollingLayout:library:1.2.0'
+    implementation 'com.jarvis.library.NestedTouchScrollingLayout:library:1.2.3'
 }
 ```
 
